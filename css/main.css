@@ -1,11 +1,9 @@
 body {
-  font-family: "Times New Roman", Georgia, Serif;
+  font-family: "Indie Flower", "Times New Roman", Georgia, Serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-image: url('/img/MultiPlate-lg.jpg');
-  background-size: cover%;
-  /*background-repeat: no-repeat;*/
+  background: url('/img/BaconCheeseburger-lg.jpg');
 }
 
 div.nav-wrapper {
@@ -42,11 +40,32 @@ footer.page-footer {
 
 }
 
-div.container, .grey-text.text-lighten-4 {
+a.grey-text.text-lighten-4 right {
   text-align: right;
 }
 
 
 main {
   flex: 1 0 auto;
+}
+
+h1 {
+  margin-top: 2.3em;
+  font-size: 3em;
+  color: white;
+  text-align: center;
+
+}
+
+.row {
+  color: white;
+  text-align: center;
+  /*height: 80%;*/
+  background-color: rgba(44, 48, 65, 0.35);
+  padding: .8em;
+  padding-bottom: 2em;
+}
+
+p {
+  font-size: 1.5em;
 }
