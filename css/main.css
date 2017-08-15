@@ -8,26 +8,11 @@ body {
 
 div.nav-wrapper {
   background-color: black;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0fffff+0,000000+79,000000+100 */
-  background: #0fffff; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  #0fffff 0%, #000000 79%, #000000 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover,  #0fffff 0%,#000000 79%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center,  #0fffff 0%,#000000 79%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0fffff', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  border-bottom: solid 2px #27b87b;
 }
 
 .margin-left {
   margin-left: 1.5em;
-}
-
-a.margin-right {
-  margin-right: 2em;
-  color: gold;
-}
-
-
-.container {
-  margin: auto;
 }
 
 footer.page-footer {
@@ -37,20 +22,13 @@ footer.page-footer {
   left: 0;
   padding: 1em;
   background-color: #000;
-
+  border-top: solid 2px #27b87b;
 }
 
-a.grey-text.text-lighten-4 right {
-  text-align: right;
-}
-
-
-main {
-  flex: 1 0 auto;
-}
 
 h1 {
-  margin-top: 2.3em;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
   font-size: 3em;
   color: white;
   text-align: center;
@@ -58,10 +36,9 @@ h1 {
 }
 
 .row {
-  color: white;
+  color: white#cfcfcf;
   text-align: center;
-  /*height: 80%;*/
-  background-color: rgba(44, 48, 65, 0.35);
+  background-color: rgba(159, 166, 198, 0.35);
   padding: .8em;
   padding-bottom: 2em;
 }
@@ -69,3 +46,12 @@ h1 {
 p {
   font-size: 1.5em;
 }
+
+.icon {
+  height: 50px;
+}
+
+/*.btn-floating.btn-large.waves-effect.waves-light i {
+  /*margin: auto;*/
+  text-align: center;
+}*/
