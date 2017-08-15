@@ -1,5 +1,6 @@
 body {
-  font-family: "Indie Flower", "Times New Roman", Georgia, Serif;
+  font-family: "Titillium Web", "Times New Roman", Georgia, Serif;
+  font-weight: 400;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -15,6 +16,10 @@ div.nav-wrapper {
   margin-left: 1.5em;
 }
 
+.margin-left2 {
+  margin-left: 5em;
+}
+
 footer.page-footer {
   position: absolute;
   right: 0;
@@ -25,6 +30,10 @@ footer.page-footer {
   border-top: solid 2px #27b87b;
 }
 
+.footer-copyright {
+  text-align: center;
+  height: 1em;
+}
 
 h1 {
   margin-top: 1.2em;
@@ -35,13 +44,14 @@ h1 {
 
 }
 
-.row {
-  color: white#cfcfcf;
+.stripe {
+  color: #cfcfcf;
   text-align: center;
-  background-color: rgba(159, 166, 198, 0.35);
+  background-color: rgba(159, 166, 198, 0.5);
   padding: .8em;
   padding-bottom: 2em;
 }
+
 
 p {
   font-size: 1.5em;
@@ -51,7 +61,6 @@ p {
   height: 50px;
 }
 
-/*.btn-floating.btn-large.waves-effect.waves-light i {
-  /*margin: auto;*/
-  text-align: center;
-}*/
+.test {
+  color: white;
+}
