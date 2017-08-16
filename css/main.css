@@ -4,7 +4,12 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  /*padding-bottom: 7%;*/
+}
+
+main {
   background: url('/img/BaconCheeseburger-lg.jpg');
+  flex: 1 0 auto;
 }
 
 div.nav-wrapper {
@@ -21,13 +26,14 @@ div.nav-wrapper {
 }
 
 footer.page-footer {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1em;
   background-color: #000;
   border-top: solid 2px #27b87b;
+  z-index: 1;
 }
 
 .footer-copyright {
@@ -41,13 +47,12 @@ h1 {
   font-size: 3em;
   color: white;
   text-align: center;
-
 }
 
 .stripe {
-  color: #cfcfcf;
+  color: #000;
   text-align: center;
-  background-color: rgba(159, 166, 198, 0.5);
+  background-color: rgba(159, 166, 198, 0.6);
   padding: .8em;
   padding-bottom: 2em;
 }
@@ -61,6 +66,6 @@ p {
   height: 50px;
 }
 
-.test {
-  color: white;
+.bottom-margin {
+  margin-bottom: 7%;
 }
