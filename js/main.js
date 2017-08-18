@@ -1,11 +1,9 @@
-
 $(document).ready(() => {
   let cart = []
 
   //  add to cart
   $('.addBtn').click((event) => {
     // event.preventDefault()
-
     let card = $(event.target).parent().siblings()
     let price = card.find('.price').text()
     let title = card.find('.card-title').text()
@@ -16,17 +14,14 @@ $(document).ready(() => {
   //remove from cart
   $('#orders').click('.remove', (event) => {
     let title = $(event.target).data('title')
-    console.log('title to remove: ', title)
     removeFromCart(title)
   })
 
     function removeFromCart(title) {
       let existingItem = findInCart(title)
       if (existingItem && existingItem.quantity > 0) {
-        console.log('removing item');
         existingItem.quantity--
       }
-      console.log(cart);
       renderCart()
     }
 
@@ -37,12 +32,10 @@ $(document).ready(() => {
     if(existingItem) {
       existingItem.quantity++
     } else {
-      console.log('set quant to 1')
       item.quantity = 1
       cart.push(item)
     }
     renderCart()
-    console.log(cart);
   }
 
 
@@ -73,27 +66,44 @@ $(document).ready(() => {
           <td>${item.title}</td>
           <td>${item.quantity}</td>
           <td>${formatPrice(price)}</td>
-          <td><a class="btn btn-primary remove" data-title="${item.title}">Remove</a></td>
+          <td class='ctrBtn'><a class="remove btn-floating waves-effect waves-light red" data-title="${item.title}">-<i class="material-icons"></i></a></td>
         </tr>`)
-        console.log('cart stuff');
       }
       subtotal += (price * item.quantity)
     }
 
     // do calculate
-    console.log("subtotal", subtotal)
+    // console.log("subtotal", subtotal)
     $('#subtotal').text(formatPrice(subtotal))
+    addTax()
+    addTotal()
   }
 
   function parsePrice(price) {
-
-    console.log('this is parsePrice', parseFloat(price.replace(/\$/, '')))
     return parseFloat(price.replace(/\$/, ''))
   }
 
   function formatPrice(price) {
-    console.log('formatPrice price is', price);
     return '$' + price.toFixed(2)
   }
+
+
+  //  tax
+  function addTax() {
+    let tax = $('#subtotal').text().replace(/\$/, '') * 0.08845
+    // parseFloat(tax.toFixed(2))
+    tax = '$' + tax.toFixed(2)
+    $('#tax').text(tax)
+  }
+
+  // total
+  function addTotal() {
+    let total = parseFloat($('#subtotal').text().replace(/\$/, ''))
+    total += (total * 0.08845)
+    total = '$' + total.toFixed(2)
+    console.log(total)
+    $('#total').text(total)
+  }
+
 
 })

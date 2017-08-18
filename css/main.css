@@ -66,14 +66,13 @@ p {
   margin-bottom: 32%;
 }
 
-/*@media screen and (max-width: 600px) {
-  .phonePad {
-    margin-bottom: 6em;
-  }
-}*/
-
-@@media screen (max-width: 1600px) and (min-width:993px){ /*this isnt working*/
-  .margin-left {
-    padding-left: 23px;
-  }
+.ctrBtn {
+  text-align: center;
 }
+
+
+/*@@media screen (max-width: 1600px) and (min-width:993px){ /*this isnt working*/*/
+  /*.margin-left {*/
+    /*padding-left: 23px;*/
+  /*}*/
+/*}*/
