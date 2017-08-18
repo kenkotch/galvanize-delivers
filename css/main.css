@@ -71,6 +71,11 @@ p {
 }
 
 
+#total {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
 /*@@media screen (max-width: 1600px) and (min-width:993px){ /*this isnt working*/*/
   /*.margin-left {*/
     /*padding-left: 23px;*/
