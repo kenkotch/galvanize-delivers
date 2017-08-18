@@ -23,8 +23,10 @@ $(document).ready(() => {
     function removeFromCart(title) {
       let existingItem = findInCart(title)
       if (existingItem && existingItem.quantity > 0) {
-        existingItem--
+        console.log('removing item');
+        existingItem.quantity--
       }
+      console.log(cart);
       renderCart()
     }
 
@@ -71,11 +73,11 @@ $(document).ready(() => {
           <td>${item.title}</td>
           <td>${item.quantity}</td>
           <td>${formatPrice(price)}</td>
-          <td><a class="btn btn-primary remove-item" data-title="${item.title}">Remove</a></td>
+          <td><a class="btn btn-primary remove" data-title="${item.title}">Remove</a></td>
         </tr>`)
+        console.log('cart stuff');
       }
-      subtotal += price * +(item.quantity)
-      // subtotal += (price * item.quantity)
+      subtotal += (price * item.quantity)
     }
 
     // do calculate
