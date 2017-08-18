@@ -1,126 +1,170 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/fb07e26f3f.js"></script>
-    <link rel=icon href="img/favicon-fax.ico">
-    <!-- Ken's style sheet -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400" rel="stylesheet">
-    <!-- title -->
-    <title>Ken is the driver. He delivers.</title>
-  </head>
 
-  <body>
-    <header>
-      <!-- NAV BAR -->
-      <nav>
-        <div class="nav-wrapper">
-          <a href="index.html" class="brand-logo margin-left"><i class="fa fa-fax"></i> Ken Delivers.</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a class="right-align" href="order.html">Order</a></li>
-          </ul>
-        </div>
-      </nav>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/fb07e26f3f.js"></script>
+  <link rel=icon href="img/favicon-fax.ico">
+  <!-- Ken"s style sheet -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400" rel="stylesheet">
+  <!-- always do this -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- title -->
+  <title>Ken is the driver. He delivers.</title>
+</head>
 
-    </header>
+<body>
+  <header>
+    <!-- NAV BAR -->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo margin-left"><i class="fa fa-fax"></i> Ken Delivers.</a>
+        <ul id="nav-mobile" class="right">
+          <li><a class="right-align" href="order.html">Order</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
 
-    <main>
-      <h1>Fine dining, but in your house. Don't come here. There is nowhere to sit.</h1>
-      <div class="center-align margin-left2">
-        <!-- row 1 -->
-        <div class="row">
-
-          <div class="col s3">
-            <div class="card">
-              <div class="card-image">
-                <img src="img/burger.jpg" alt="Burger">
-                <a class="btn-floating halfway-fab waves-effect waves-light black right" id='burger'><i class="material-icons">add</i></a>
+  <main>
+    <h1>Fine dining, but in your house. Don't come here. There is nowhere to sit.</h1>
+    <!-- main row -->
+    <div class="row">
+      <div class="col s12 m12 l6">
+        <div class="center-align">
+          <!-- row 1 in first col-->
+          <div class="row">
+            <div class="col s12 m12 l6">
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/burger.jpg" alt="Burger">
+                  <a class="addBtn btn-floating halfway-fab waves-effect waves-light black right" id="burger">add</a>
+                </div>
+                <div class="card-content">
+                  <p class="card-title">Cheeseburger in Pradise</p>
+                  <p>Get yourself a greasy burger with some soggy fries. You'll love em.</p>
+                  <p class="price">$9.37</p>
+                </div>
               </div>
-              <div class="card-content">
-                <p>Get yourself a greasy burger with some soggy fries. You'll love em.</p>
-                <p>$9.37</p>
+            </div>
+
+            <div class="col s12 m12 l6">
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/pizza.jpg" alt="Pizza">
+                  <a class="addBtn btn-floating halfway-fab waves-effect waves-light black right" id="pizza">add</a>
+                </div>
+                <div class="card-content">
+                  <p class="card-title">Wood oven pizza</p>
+                  <p>Pizza made in an oven. It isn't wood fired, but still an oven.</p>
+                  <p class="price">$13.21</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col s3">
-            <div class="card">
-              <div class="card-image">
-                <img src="img/pizza.jpg" alt="Pizza">
-                <a class="btn-floating halfway-fab waves-effect waves-light black right" id='pizza'><i class="material-icons">add</i></a>
-              </div>
-              <div class="card-content">
-                <p>Pizza made in an oven. It isn't wood fired, but still an oven.</p>
-                <p>$13.21</p>
-              </div>
-            </div>
-          </div>
-          <div class="col s4 stripe">
-            <ol class='buying'>
-
-            </ol>
-          </div>
-        </div>
-
-        <!-- row 2 -->
-        <div class="row bottom-margin">
-          <div class="col s3">
-            <div class="card">
-              <div class="card-image">
-                <img src="img/ribs.jpg" alt="Ribs">
-                <a class="btn-floating halfway-fab waves-effect waves-light black right" id='ribs'><i class="material-icons">add</i></a>
-              </div>
-              <div class="card-content">
-                <p>You know you want it. Just do it. Ribs.</p>
-                <p>$16.99</p>
+          <!-- row 2 in first col-->
+          <div class="row bottom-margin">
+            <div class="col s12 m12 l6">
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/ribs.jpg" alt="Ribs">
+                  <a class="addBtn btn-floating halfway-fab waves-effect waves-light black right" id="ribs">add</a>
+                </div>
+                <div class="card-content">
+                  <p class="card-title">Meaty meaty ribs</p>
+                  <p>You know you want it. Just do it. Ribs.</p>
+                  <p class="price">$16.99</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col s3">
-            <div class="card">
-              <div class="card-image">
-                <img src="img/ice_cream.jpg" alt="Ice Cream">
-                <a class="btn-floating halfway-fab waves-effect waves-light black right" id='iceCream'><i class="material-icons">add</i></a>
-              </div>
-              <div class="card-content">
-                <p>Ice Cream. It probobly won't melt...maybe.</p>
-                <p>$0.48</p>
+            <div class="col s12 m12 l6">
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/ice_cream.jpg" alt="Ice Cream">
+                  <a class="addBtn btn-floating halfway-fab waves-effect waves-light black right" id="iceCream">add</a>
+                </div>
+                <div class="card-content">
+                  <p class="card-title">Ice Cream</p>
+                  <p>Ice Cream. It probobly won't melt...maybe.</p>
+                  <p class="price">$0.48</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col s3">
-            <a class="waves-effect waves-light btn" id='removeBtn'>Remove Last Item</a>
           </div>
         </div>
       </div>
-    </main>
 
-
-    <footer class="page-footer">
-      <a class="align-left grey-text text-lighten-4 left" href="index.html">Home</a>
-      <a class="align-right grey-text text-lighten-4 right" href="order.html">Order Some Food Dude.</a>
-
-
-      <div class="footer-copyright">
-          © 2004 Site maintained by Kotch, Kotch and Kotch LLP. You have been warned.
+      <!-- col 2 -->
+      <!-- Cart -->
+      <div class="col s12 m12 l5 stripe bottom-margin">
+        <h1>Cart</h1>
+        <table class="striped" id="orders">
+          <thead>
+            <tr>
+              <td>Photo</td>
+              <td>Name</td>
+              <td>Quantity</td>
+              <td>Price</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Sub Total:
+                <div id="subtotal"></div>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Total:
+                <div id="total"></div>
+              </td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
-    </footer>
+  </main>
 
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src='js/main.js'>
 
-    </script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-  </body>
+  <footer class="page-footer">
+    <a class="align-left grey-text text-lighten-4 left" href="index.html">Home</a>
+    <a class="align-right grey-text text-lighten-4 right" href="order.html">Order Some Food Dude.</a>
+
+    <br>
+    <div class="footer-copyright">
+      © 2004 Site maintained by Kotch, Kotch and Kotch LLP. You have been warned.
+    </div>
+  </footer>
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/main.js">
+  </script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
 </html>

@@ -1,70 +1,60 @@
-document.addEventListener('DOMContentLoaded', () => {
+$(document).ready(() => {
+  let cart = []
 
-  //variables
-  const food = {
-    burger: ['Royale with Cheese', '$9.37', 'img/burger.jpg'],
-    pizza: ['Wood Oven Pizza', '$13.21', 'img/pizza.jpg'],
-    ribs: ['Meaty Ribs with extra meat', '$16.99', 'img/ribs.jpg'],
-    iceCream: ['Melty Ice Cream', '$0.48', 'img/ice_cream.jpg']
-  }
-  let ol = document.getElementsByClassName('buying')[0]
-  let burger = document.getElementById('burger')
-  let pizza = document.getElementById('pizza')
-  let ribs = document.getElementById('ribs')
-  let iceCream = document.getElementById('iceCream')
+  $('.addBtn').click((event) => {
+    // event.preventDefault()
+    let card = $(event.target).parent().siblings()
+    let price = card.find('.price').text()
+    let title = card.find('.card-title').text()
+    addToCart({price, title})
+  })
 
-  function addFood(ol, text) {
-    let li = document.createElement('li')
-    li.innerHTML = text
-    ol.appendChild(li)
+
+  function addToCart(item) {
+    cart.push(item)
+    console.log('cart', cart)
+
+    renderCart()
   }
 
-  // add Burger
-  burger.addEventListener('click', function() {
-    addFood(ol, food.burger[0])
-  })
+  function renderCart() {
+    // find table
+    let tbody = $('#orders tbody')
 
-  // add Pizza
-  pizza.addEventListener('click', function() {
-    addFood(ol, food.pizza[0])
-  })
+   // clear out all order data
+    tbody.children().remove()
 
-  // add Ribs
-  ribs.addEventListener('click', function() {
-    addFood(ol, food.ribs[0])
-  })
+  // re-render tbody
+    let subtotal = 0
+    for (item of cart) {
+      let price = parsePrice(item.price)
 
-  // add Ice Cream
-  iceCream.addEventListener('click', function() {
-    addFood(ol, food.iceCream[0])
-  })
-
-  //remove last food item
-  function removeLi() {
-    if (ol.lastChild) {
-      ol.lastChild.remove()
+      // if (item.quantity > 0) {
+        tbody.append(`<tr>
+          <td>${item.title}</td>
+          <td>${item.quantity}</td>
+          <td>${item.price}</td>
+          <td><a class="btn btn-primary remove-item" data-title="${item.title}">Remove</a></td>
+        </tr>`)
+      // }
+      subtotal += price //* +(item.quantity)
     }
-  }
-  let rmButton = document.getElementById('removeBtn')
-  rmButton.addEventListener('click', function() {
-    removeLi()
-  })
-})
 
-// $('#simple-form').on('submit', function (event) {
-//   const serialized = $('#simple-form').serializeArray()
-//   //this is how to add and print #s for ken delivers!
-//   let num01 = parseInt($('#num-01').val(), 10)
-//   let num02 = parseInt($('#num-02').val(), 10)
-//   let total = num01 + num02
-//   $('#total').text(`$${total}!`)
-//   console.log(serialized)
-//   // console.log(total)
-//   return false
-// })
-//
-// $('#yay-btn').on('click', function (event) {
-//   event.preventDefault()
-//   alert('Yeah!')
-//   console.log('YAY YAY YAY')
-// })
+    // do calculate
+    console.log("subtotal", subtotal)
+    $('#subtotal').text(formatPrice(subtotal))
+  }
+
+  function parsePrice(price) {
+    return parseFloat(price.replace(/\$/, ''))
+  }
+
+  function formatPrice(price) {
+    return '$' + price.toFixed(2)
+  }
+
+
+
+
+
+})
