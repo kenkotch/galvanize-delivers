@@ -2,49 +2,48 @@
 $(document).ready(() => {
   let cart = []
 
-  //  add to cart
-  $('.addBtn').click((event) => {
-    // event.preventDefault()
-
-    let card = $(event.target).parent().siblings()
+  //add to cart
+  $('.card .btn-floating').click((event) => {
+    event.preventDefault()
+    // console.log('button click')
+    let card = $(event.target).parent()
     let price = card.find('.price').text()
     let title = card.find('.card-title').text()
 
-    addToCart({price, title})
+    addToCart({price: price, title: title})
   })
 
   //remove from cart
   $('#orders').click('.remove', (event) => {
-    let title = $(event.target).data('title')
-    console.log('title to remove: ', title)
+    let title = $(event.target).data("title")
     removeFromCart(title)
   })
 
-    function removeFromCart(title) {
-      let existingItem = findInCart(title)
-      if (existingItem && existingItem.quantity > 0) {
-        existingItem--
-      }
-      renderCart()
+  function removeFromCart(title) {
+    let existingItem = findInCart(title)
+    if (existingItem && existingItem.quantity > 0) {
+      existingItem.quantity--
     }
+    renderCart()
+  }
 
   function addToCart(item) {
-    //check if in cart
+
     let existingItem = findInCart(item.title)
 
-    if(existingItem) {
+    if (existingItem) {
+      console.log('item exists', existingItem)
       existingItem.quantity++
     } else {
-      console.log('set quant to 1')
+      //add quantity 1 to cart
       item.quantity = 1
       cart.push(item)
     }
     renderCart()
-    console.log(cart);
+    console.log(cart)
   }
 
-
-  function findInCart(title) {
+  function findInCart(text) {
     let existingItem = null
     for (var i = 0; i < cart.length; i++) {
       if (cart[i].title === title) {
@@ -55,13 +54,14 @@ $(document).ready(() => {
   }
 
   function renderCart() {
-    // find table
+    //find table
     let tbody = $('#orders tbody')
+    console.log(tbody)
 
-   // clear out all order data
+    //clear data
     tbody.children().remove()
 
-  // re-render tbody
+    //rerender tbody
     let subtotal = 0
     for (item of cart) {
       let price = parsePrice(item.price)
@@ -71,26 +71,21 @@ $(document).ready(() => {
           <td>${item.title}</td>
           <td>${item.quantity}</td>
           <td>${formatPrice(price)}</td>
-          <td><a class="btn btn-primary remove-item" data-title="${item.title}">Remove</a></td>
+          <td><a class="btn btn-primary btn-floating remove-item AddBtn removeBtn" data-title="${item.title}">Remove</a></td>
         </tr>`)
       }
       subtotal += price * +(item.quantity)
-      // subtotal += (price * item.quantity)
     }
 
-    // do calculate
-    console.log("subtotal", subtotal)
+    //calculate
     $('#subtotal').text(formatPrice(subtotal))
   }
 
   function parsePrice(price) {
-
-    console.log('this is parsePrice', parseFloat(price.replace(/\$/, '')))
     return parseFloat(price.replace(/\$/, ''))
   }
 
   function formatPrice(price) {
-    console.log('formatPrice price is', price);
     return '$' + price.toFixed(2)
   }
 
